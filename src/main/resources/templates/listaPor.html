@@ -9,10 +9,10 @@
 <h1>Lista de colaboradores(as)</h1>
 <p><a href="/">Volver al inicio</a></p>
 <ul>
-  <div th:each="entry: ${lista}">
+  <div th:each="entry: ${listaPor}">
 
       <li>
-        <a th:href="@{/listarPor/{id}(id= ${entry.id})}">Ver Informacion</a>
+        <a th:href="@{/listarby/{id}(id= ${entry.id})}">Ver Informacion</a>
         <br>
         <label> ID: &nbsp; </label>
         <span th:text="${entry.id}">ID</span>

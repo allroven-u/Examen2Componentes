@@ -2,10 +2,8 @@ package com.cenfotec.ac.cr.examen2componentes.entities;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -28,6 +26,10 @@ public class futbolista {
     private String direccion;
     private String telefono;
     private String email;
+
+    @OneToMany(fetch= FetchType.LAZY, mappedBy="jugador")
+    private Set<IMC> registrosIMC;
+
 
     public futbolista() {
     }
@@ -170,10 +172,11 @@ public class futbolista {
         this.email = email;
     }
 
+    public Set<IMC> getRegistrosIMC() {
+        return registrosIMC;
+    }
 
-
-
-
-
-
+    public void setRegistrosIMC(Set<IMC> registrosIMC) {
+        this.registrosIMC = registrosIMC;
+    }
 }

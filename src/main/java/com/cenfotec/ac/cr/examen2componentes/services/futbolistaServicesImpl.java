@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class futbolistaServicesImpl implements futbolistaService{
@@ -23,5 +24,14 @@ public class futbolistaServicesImpl implements futbolistaService{
         return jugadorRepo.findAll();
     }
 
+    @Override
+    public Optional<futbolista> get(Long id) {
+        return jugadorRepo.findById(id);
+    }
+
+    @Override
+    public List<futbolista> find(String nombre) {
+        return jugadorRepo.findByNombreContaining(nombre);
+    }
 
 }
