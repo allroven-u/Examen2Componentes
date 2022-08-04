@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar futbolista</title>
+</head>
+<body>
+<form action="#" th:action="@{/registrar}" th:object="${nuevo}" method="post">
+  <label for="nombre">Nombre</label>
+  <input type="text" th:field="*{nombre}" id="nombre">
+  <br>
+  <label for="apellido1">Primer Apellido</label>
+  <input type="text" th:field="*{apellido1}" id="apellido1">
+  <br>
+  <label for="apellido2">Segundo Apellido</label>
+  <input type="text" th:field="*{apellido2}" id="apellido2">
+  <br>
+  <label for="posicion">Posicion</label>
+  <input type="text" th:field="*{posicion}" id="posicion">
+  <br>
+  <label for="Genero">Genero</label>
+  <input type="text" th:field="*{Genero}" id="Genero">
+  <br>
+  <label for="estatura">Estatura</label>
+  <input type="text" th:field="*{estatura}" id="estatura">
+  <br>
+  <label for="peso">Peso</label>
+  <input type="text" th:field="*{peso}" id="peso">
+
+  <label for="provincia">Provincia</label>
+  <input type="text" th:field="*{provincia}" id="provincia">
+
+  <label for="canton">Cantón</label>
+  <input type="text" th:field="*{canton}" id="canton">
+
+  <label for="distrito">Distrito</label>
+  <input type="text" th:field="*{distrito}" id="distrito">
+
+  <label for="direccion">Direccion</label>
+  <input type="text" th:field="*{direccion}" id="direccion">
+
+  <label for="telefono">Telefono</label>
+  <input type="text" th:field="*{telefono}" id="telefono">
+
+  <label for="email">E-Mail</label>
+  <input type="text" th:field="*{email}" id="email">
+
+  <input type="submit" value="Registrar">
+</form>
+</body>
+</html>
