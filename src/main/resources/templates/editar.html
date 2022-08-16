@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar futbolista</title>
+</head>
+<body>
+<h1>Editar Futbolista</h1>
+<p><a href="/">Volver al inicio</a></p>
+
+<form action="#" th:action="@{/editar}" th:object="${jugador}" method="post">
+  <label for="nombre">ID</label>
+  <input type="text" th:field="*{id}" id="id">
+  <br>
+  <label for="nombre">Nombre</label>
+  <input type="text" th:field="*{nombre}" id="nombre">
+  <br>
+  <label for="apellido1">Primer Apellido</label>
+  <input type="text" th:field="*{apellido1}" id="apellido1">
+  <br>
+  <label for="apellido2">Segundo Apellido</label>
+  <input type="text" th:field="*{apellido2}" id="apellido2">
+  <br>
+  <label for="posicion">Posicion</label>
+  <input type="text" th:field="*{posicion}" id="posicion">
+  <br>
+  <label for="Genero">Genero</label>
+  <input type="text" th:field="*{Genero}" id="Genero">
+  <br>
+  <label for="estatura">Estatura</label>
+  <input type="text" th:field="*{estatura}" id="estatura">
+  <br>
+  <label for="peso">Peso</label>
+  <input type="text" th:field="*{peso}" id="peso">
+  <br>
+  <label for="provincia">Provincia</label>
+  <input type="text" th:field="*{provincia}" id="provincia">
+  <br>
+  <label for="canton">Cantón</label>
+  <input type="text" th:field="*{canton}" id="canton">
+  <br>
+  <label for="distrito">Distrito</label>
+  <input type="text" th:field="*{distrito}" id="distrito">
+  <br>
+  <label for="direccion">Direccion</label>
+  <input type="text" th:field="*{direccion}" id="direccion">
+  <br>
+  <label for="telefono">Telefono</label>
+  <input type="text" th:field="*{telefono}" id="telefono">
+  <br>
+  <label for="email">E-Mail</label>
+  <input type="text" th:field="*{email}" id="email">
+  <br>
+  <input type="submit" value="Editar">
+</form>
+</body>
+</html>

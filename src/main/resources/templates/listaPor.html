@@ -9,51 +9,45 @@
 <h1>Lista de colaboradores(as)</h1>
 <p><a href="/">Volver al inicio</a></p>
 <ul>
-  <div th:each="entry: ${listaPor}">
+  <div th:object="listaPor">
 
-      <li>
-        <a th:href="@{/listarby/{id}(id= ${entry.id})}">Ver Informacion</a>
-        <br>
-        <label> ID: &nbsp; </label>
-        <span th:text="${entry.id}">ID</span>
-        <br>
         <label> Nombre: &nbsp;</label>
-        <span th:text="${entry.nombre}">Nombre</span>
-        <span th:text="${entry.apellido1}">Primer Apellido</span>
-        <span th:text="${entry.apellido2}">Segundo Apellido</span>
+        <span th:text="${listaPor.nombre}">Nombre</span>
+        <span th:text="${listaPor.apellido1}">Primer Apellido</span>
+        <span th:text="${listaPor.apellido2}">Segundo Apellido</span>
         <br>
         <label> Posición de juego: &nbsp;</label>
-        <span th:text="${entry.posicion}">Posición de juego</span>
+        <span th:text="${listaPor.posicion}">Posición de juego</span>
         <br>
         <label> Rama de competición: &nbsp;</label>
-        <span th:text="${entry.Genero}">Rama de competición</span>
+        <span th:text="${listaPor.Genero}">Rama de competición</span>
         <br>
         <label> Estatura: &nbsp;</label>
-        <span th:text="${entry.estatura}">Estatura</span>
+        <span th:text="${listaPor.estatura}">Estatura</span>
         <br>
         <label> Peso: &nbsp;</label>
-        <span th:text="${entry.peso}">Peso</span>
+        <span th:text="${listaPor.peso}">Peso</span>
         <label> Indice Masa muscular: &nbsp;</label>
         <br>
-        <span th:text="${entry.indiceMasa}">Indice Masa muscular</span>
+        <span th:text="${listaPor.indiceMasa}">Indice Masa muscular</span>
         <br>
         <label> Provincia: &nbsp;</label>
-        <span th:text="${entry.provincia}">Provincia</span>
+        <span th:text="${listaPor.provincia}">Provincia</span>
         <br>
         <label> Cantón: &nbsp;</label>
-        <span th:text="${entry.canton}">Canton</span>
+        <span th:text="${listaPor.canton}">Canton</span>
         <br>
         <label> Distrito: &nbsp;</label>
-        <span th:text="${entry.distrito}">Distrito</span>
+        <span th:text="${listaPor.distrito}">Distrito</span>
         <br>
         <label> Dirección: &nbsp;</label>
-        <span th:text="${entry.direccion}">Dirección</span>
+        <span th:text="${listaPor.direccion}">Dirección</span>
         <br>
         <label> Teléfono: &nbsp;</label>
-        <span th:text="${entry.telefono}">Teléfono</span>
+        <span th:text="${listaPor.telefono}">Teléfono</span>
         <br>
         <label> Email: &nbsp;</label>
-        <span th:text="${entry.email}">E-Mail</span>
+        <span th:text="${listaPor.email}">E-Mail</span>
       </li>
 
   </div>

@@ -12,7 +12,7 @@
   <div th:each="entry: ${lista}">
 
       <li>
-        <a th:href="@{/listarPor/{id}(id= ${entry.id})}">Ver Informacion</a>
+        <a th:href="@{'/editar/'+ ${entry.id}}">Editar</a>
         <br>
         <label> ID: &nbsp; </label>
         <span th:text="${entry.id}">ID</span>
@@ -33,8 +33,8 @@
         <br>
         <label> Peso: &nbsp;</label>
         <span th:text="${entry.peso}">Peso</span>
-        <label> Indice Masa muscular: &nbsp;</label>
         <br>
+        <label> Indice Masa muscular: &nbsp;</label>
         <span th:text="${entry.indiceMasa}">Indice Masa muscular</span>
         <br>
         <label> Provincia: &nbsp;</label>

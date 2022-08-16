@@ -3,18 +3,36 @@
 <html lang="en-US" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Personas</title>
+  <title>Lista de todos los futbolistas</title>
 </head>
 <body>
 <h1>Lista de colaboradores(as)</h1>
+<p><a href="/">Volver al inicio</a></p>
 <ul>
-  <div th:each="entry: ${lista}">
+  <div th:each="entry: ${listaTodos}">
+
     <li>
+      <a th:href="@{'/editar/'+ ${entry.id}}">Editar</a>
+      <a th:href="@{'/listaPor/'+ ${entry.id}}">Ver detalle</a>
+      <br>
+      <label> ID: &nbsp; </label>
+      <span th:text="${entry.id}">ID</span>
+      <br>
+      <label> Nombre: &nbsp;</label>
       <span th:text="${entry.nombre}">Nombre</span>
-      <span th:text="${entry.apellido1}">apellido1</span>
-      <span th:text="${entry.apellido2}">apellido2</span>
+      <span th:text="${entry.apellido1}">Primer Apellido</span>
+      <span th:text="${entry.apellido2}">Segundo Apellido</span>
+      <br>
+      <label> Teléfono: &nbsp;</label>
+      <span th:text="${entry.telefono}">Teléfono</span>
+      <br>
+      <label> Email: &nbsp;</label>
+      <span th:text="${entry.email}">E-Mail</span>
     </li>
+
   </div>
 </ul>
+
+
 </body>
 </html>

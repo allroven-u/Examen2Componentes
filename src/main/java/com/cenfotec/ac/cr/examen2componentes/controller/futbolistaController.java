@@ -28,22 +28,37 @@ public class futbolistaController {
         model.addAttribute("nuevo",nuevo);
         return "registrar";
     }
-
     @RequestMapping(value = "/registrar", method = RequestMethod.POST)
     private String postRegistrarPage(Model model, futbolista nuevo, BindingResult result){
     nuevo.setIndiceMasa(30.00);
     jugadorService.registrarFutbolista(nuevo);
         return "exito";
     }
+    @RequestMapping(value = "/editar/{id}")
+    private String getEditarPage(Model model,@PathVariable(name = "id") long id){
+        model.addAttribute("jugador",jugadorService.get(id));
+        return "editar";
+    }
 
+    @RequestMapping(value = "/editar", method = RequestMethod.POST)
+    private String postEditarPage(Model model, futbolista jugador, BindingResult result){
+        jugadorService.registrarFutbolista(jugador);
+        return "exito";
+    }
+
+    @RequestMapping(value = "/listaTodos")
+    private String getListFutbolistas(Model model){
+        model.addAttribute("listaTodos", jugadorService.listarFutbolistas());
+        return "listaTodos";
+    }
     @RequestMapping(value = "/listar")
     private String getListPersonas(Model model){
         model.addAttribute("lista", jugadorService.listarFutbolistas());
         return "lista";
     }
 
-    @RequestMapping(value = "/listarPor/{id}")
-    private String getListJugador(Model model, @PathVariable long id){
+    @RequestMapping(value = "/listaPor/{id}")
+    private String getListJugador(Model model, @PathVariable(name = "id") long id){
         model.addAttribute("listaPor", jugadorService.get(id));
         return "listaPor";
     }
